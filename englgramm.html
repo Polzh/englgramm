@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Effective English Grammar – Mini Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-page: #f5f7fb;
+      --bg-card: #ffffff;
+      --bg-accent: #e5edff;
+      --bg-theory: #fff7e5;
+      --bg-practice: #e9fdf3;
+      --bg-testing: #fdf0f5;
+      --border-soft: #dde3f0;
+      --primary: #1f4fff;
+      --primary-dark: #1232a3;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #edf2ff 0, #f5f7fb 45%, #edf2ff 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      background: linear-gradient(135deg, #1f4fff, #4f46e5);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow-soft);
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .course-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.24);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .course-badge span.icon {
+      font-size: 1rem;
+    }
+
+    .header-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .header-cta a {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(15, 23, 42, 0.16);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-cta a.primary-cta {
+      background: #ffffff;
+      color: #111827;
+      border-color: #ffffff;
+      font-weight: 600;
+    }
+
+    .header-main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    .header-text {
+      max-width: 620px;
+    }
+
+    .header-title {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .header-subtitle {
+      font-size: 0.96rem;
+      opacity: 0.95;
+      max-width: 90%;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      opacity: 0.9;
+    }
+
+    .header-meta span {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.32);
+    }
+
+    .header-pill {
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.2);
+      font-size: 0.75rem;
+      max-width: 220px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 8px;
+    }
+
+    .nav-link {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      background: rgba(15, 23, 42, 0.12);
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .nav-link span.icon {
+      font-size: 0.9rem;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-1px);
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .section {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 20px 20px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #edf0f7;
+      padding-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.icon {
+      font-size: 1.2rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .section-body p + p {
+      margin-top: 6px;
+    }
+
+    /* ASIDE PROGRESS */
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 112px;
+    }
+
+    .side-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 12px;
+      font-size: 0.86rem;
+    }
+
+    .side-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill-row span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px dashed #cdd2e5;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .btn-small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-small:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* HOME SECTION */
+    .home-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .home-main-text p {
+      margin-bottom: 8px;
+    }
+
+    .home-highlights {
+      display: grid;
+      gap: 10px;
+    }
+
+    .highlight-card {
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      background: var(--bg-accent);
+      border: 1px solid #c7d2fe;
+      font-size: 0.9rem;
+    }
+
+    .highlight-card strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .goal-list,
+    .outcome-list {
+      list-style: none;
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+
+    .goal-list li,
+    .outcome-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 2px 0;
+    }
+
+    .goal-icon,
+    .outcome-icon {
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    /* COURSE STRUCTURE */
+    .structure-intro {
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+
+    .course-table-wrapper {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #f9fafb;
+    }
+
+    table.course-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    .course-table thead {
+      background: #e0ebff;
+    }
+
+    .course-table th,
+    .course-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 9px 10px;
+      text-align: left;
+    }
+
+    .course-table th {
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .course-table tbody tr:nth-child(even) {
+      background: #f3f4ff;
+    }
+
+    .course-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      background: #e5edff;
+      color: #1f3a8a;
+    }
+
+    .structure-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* TOPIC SECTION – THEORY */
+    .topic-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .tag-topic {
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #075985;
+      margin-left: auto;
+    }
+
+    .theory-block {
+      background: var(--bg-theory);
+      border-radius: var(--radius-md);
+      padding: 12px 12px 10px;
+      border-left: 4px solid #fbbf24;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .theory-block h4 {
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .theory-block + .theory-block {
+      margin-top: 6px;
+    }
+
+    .theory-subtitle {
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #92400e;
+      margin-bottom: 2px;
+    }
+
+    .example-list {
+      margin-top: 4px;
+      padding-left: 14px;
+    }
+
+    .example-list li {
+      margin: 2px 0;
+    }
+
+    .pronoun-table-wrapper {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid #fed7aa;
+      background: #fffaf0;
+      margin-top: 6px;
+    }
+
+    .pronoun-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    .pronoun-table th,
+    .pronoun-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #fee2b3;
+    }
+
+    .pronoun-table th {
+      background: #fed7aa;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .pronoun-table tbody tr:nth-child(even) {
+      background: #fff7e5;
+    }
+
+    .pronoun-tagline {
+      font-size: 0.8rem;
+      margin-top: 4px;
+      color: #92400e;
+    }
+
+    /* PRACTICAL SECTION */
+    .practice-block {
+      background: var(--bg-practice);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      border-left: 4px solid #22c55e;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .practice-block h4 {
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exercise-list {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .exercise-list li {
+      margin: 3px 0;
+    }
+
+    .exercise-list span.num {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .example-note {
+      font-size: 0.85rem;
+      color: #166534;
+      margin-top: 2px;
+      margin-bottom: 3px;
+    }
+
+    .exercise-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    /* SRO SECTION */
+    .sro-list {
+      list-style: none;
+      margin-top: 4px;
+      font-size: 0.9rem;
+    }
+
+    .sro-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .sro-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .sro-note {
+      font-size: 0.83rem;
+      margin-top: 4px;
+      color: var(--text-muted);
+    }
+
+    /* TESTING SECTION */
+    .testing-wrapper {
+      background: var(--bg-testing);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      border-left: 4px solid #ec4899;
+      font-size: 0.9rem;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .quiz-item {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 8px 9px;
+      border: 1px solid #fbcfe8;
+      font-size: 0.9rem;
+    }
+
+    .quiz-item h4 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .quiz-options {
+      list-style: none;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .quiz-options li {
+      padding: 1px 0;
+    }
+
+    .quiz-hint {
+      font-size: 0.78rem;
+      color: #9d174d;
+      margin-top: 4px;
+    }
+
+    /* METHODOLOGICAL SECTION */
+    .method-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .method-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .method-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 3px 0;
+    }
+
+    .method-dot {
+      margin-top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4f46e5;
+      flex-shrink: 0;
+    }
+
+    .worksheet-box {
+      border-radius: var(--radius-md);
+      border: 1px dashed #c4b5fd;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+      background: #f5f3ff;
+    }
+
+    .worksheet-box h4 {
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .worksheet-list {
+      margin-left: 14px;
+      margin-top: 4px;
+    }
+
+    .worksheet-list li {
+      margin: 2px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 18px;
+      padding: 12px 14px 10px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(90deg, #111827, #020617);
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+    }
+
+    .footer-main span {
+      white-space: nowrap;
+    }
+
+    .footer-main strong {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .footer-link {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .back-to-top {
+      color: #bfdbfe;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      aside {
+        position: static;
+      }
+
+      .topic-layout,
+      .method-grid,
+      .home-grid,
+      .quiz-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-cta {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .nav-link {
+        font-size: 0.78rem;
+      }
+
+      .page {
+        padding-inline: 12px;
+      }
+
+      .section {
+        padding: 16px 14px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="header-top">
+        <div>
+          <div class="course-badge">
+            <span class="icon">📘</span>
+            <span>Mini-course · English Grammar</span>
+          </div>
+        </div>
+        <div class="header-cta">
+          <a href="#testing" class="primary-cta">
+            Start quick test
+            <span>➜</span>
+          </a>
+          <a href="#home">
+            View course overview
+          </a>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="header-text">
+          <h1 class="header-title">Effective English Grammar</h1>
+          <p class="header-subtitle">
+            Special course for learning English grammar with focus on real communication, clear theory, and guided practice.
+          </p>
+          <div class="header-meta">
+            <span>Level: Beginner – Pre‑Intermediate</span>
+            <span>Focus: Verb "to be" &amp; pronouns</span>
+            <span>Format: Theory · Practice · SRO · Testing</span>
+          </div>
+        </div>
+        <div class="header-pill">
+          Today’s lesson:
+          <strong>Verb "to be": am / is / are</strong>
+          <br />
+          Personal pronouns with "to be"
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a class="nav-link" href="#home">
+          <span class="icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a class="nav-link" href="#theory">
+          <span class="icon">📚</span>
+          <span>Theoretical Section</span>
+        </a>
+        <a class="nav-link" href="#practice">
+          <span class="icon">✍️</span>
+          <span>Practical Section</span>
+        </a>
+        <a class="nav-link" href="#sro">
+          <span class="icon">🧠</span>
+          <span>SRO (Self-study)</span>
+        </a>
+        <a class="nav-link" href="#testing">
+          <span class="icon">📝</span>
+          <span>Testing</span>
+        </a>
+        <a class="nav-link" href="#methodology">
+          <span class="icon">📑</span>
+          <span>Methodological Instructions</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <!-- HOME -->
+        <section id="home" class="section" aria-labelledby="home-title">
+          <div class="section-header">
+            <h2 class="section-title" id="home-title">
+              <span class="icon">🏠</span>
+              Home · Course Overview
+            </h2>
+            <span class="section-tag">Introduction</span>
+          </div>
+          <div class="section-body">
+            <div class="home-grid">
+              <div class="home-main-text">
+                <p>
+                  This mini-course <strong>"Effective English Grammar"</strong> helps students build a clear understanding of
+                  basic English grammar and use it confidently in real-life communication. The focus of this lesson is the
+                  verb <strong>"to be" (am / is / are)</strong> and personal pronouns.
+                </p>
+                <p>
+                  The material is organized like a small online learning module: each section includes theory, practice,
+                  self-study tasks, and a short test so students can check their progress.
+                </p>
+
+                <div style="margin-top: 10px;">
+                  <strong>Learning goals</strong>
+                  <ul class="goal-list">
+                    <li>
+                      <span class="goal-icon">🎯</span>
+                      <span>Understand when and how to use <strong>am, is, are</strong> in simple sentences.</span>
+                    </li>
+                    <li>
+                      <span class="goal-icon">🎯</span>
+                      <span>Connect the verb <strong>"to be"</strong> with the correct personal pronoun.</span>
+                    </li>
+                    <li>
+                      <span class="goal-icon">🎯</span>
+                      <span>Apply grammar knowledge in short texts about people, feelings, jobs and places.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div style="margin-top: 8px;">
+                  <strong>By the end of this lesson, students will be able to:</strong>
+                  <ul class="outcome-list">
+                    <li>
+                      <span class="outcome-icon">✅</span>
+                      <span>Introduce themselves and other people using <strong>"to be"</strong>.</span>
+                    </li>
+                    <li>
+                      <span class="outcome-icon">✅</span>
+                      <span>Describe basic feelings, conditions and locations correctly.</span>
+                    </li>
+                    <li>
+                      <span class="outcome-icon">✅</span>
+                      <span>Complete short exercises and quizzes with high accuracy.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="home-highlights" aria-label="Course highlights">
+                <div class="highlight-card">
+                  <strong>📚 Complete mini-course</strong>
+                  <p>
+                    Includes <em>Theoretical Section</em>, <em>Practical Section</em>, <em>SRO</em>, <em>Testing</em> and
+                    <em>Methodological Instructions</em> for the teacher.
+                  </p>
+                </div>
+                <div class="highlight-card">
+                  <strong>🧩 Clear structure</strong>
+                  <p>
+                    Lesson is divided into small blocks: explanation, examples, exercises, and reflection to support
+                    different learning styles.
+                  </p>
+                </div>
+                <div class="highlight-card">
+                  <strong>💬 Real communication focus</strong>
+                  <p>
+                    All grammar is connected to real-life sentences about people, places, jobs and feelings.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COURSE STRUCTURE -->
+        <section id="structure" class="section" aria-labelledby="structure-title">
+          <div class="section-header">
+            <h2 class="section-title" id="structure-title">
+              <span class="icon">🧭</span>
+              Course Structure
+            </h2>
+            <span class="section-tag">Overview grid</span>
+          </div>
+          <div class="section-body">
+            <p class="structure-intro">
+              The course is organized into four main components. Each topic includes a balance of <strong>theory</strong>,
+              <strong>guided practice</strong>, <strong>self-study (SRO)</strong>, and <strong>methodological support</strong>.
+            </p>
+
+            <div class="course-table-wrapper" role="group" aria-label="Course structure table">
+              <table class="course-table">
+                <thead>
+                  <tr>
+                    <th>Module / Topic</th>
+                    <th>Theoretical Section</th>
+                    <th>Practical Section</th>
+                    <th>SRO</th>
+                    <th>Methodological Instructions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1 Topic</strong></td>
+                    <td>Verb "to be"; personal pronouns</td>
+                    <td>Fill-in-the-blank &amp; transformation tasks</td>
+                    <td>Short paragraph &amp; extra practice</td>
+                    <td>Step-by-step teaching plan</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2 Topic</strong></td>
+                    <td>Affirmative / negative forms</td>
+                    <td>Sentence building &amp; dialogues</td>
+                    <td>Online drills &amp; writing tasks</td>
+                    <td>Ideas for pair and group work</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3 Topic</strong></td>
+                    <td>Questions with "to be"</td>
+                    <td>Information gap activities</td>
+                    <td>Question-form practice</td>
+                    <td>Classroom interaction tips</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Additional Lessons</strong></td>
+                    <td>Revision of key grammar</td>
+                    <td>Integrated skills tasks</td>
+                    <td>Home projects</td>
+                    <td>Extension suggestions</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Test Questions</strong></td>
+                    <td>Summary of forms</td>
+                    <td class="badge">Quiz items</td>
+                    <td>Self-check tests</td>
+                    <td>Assessment criteria</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Testing</strong></td>
+                    <td>Final check of knowledge</td>
+                    <td>Multiple-choice questions</td>
+                    <td>Reflection &amp; review</td>
+                    <td>Feedback recommendations</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="structure-footer">
+              <span>🔹 Theoretical Section → build understanding of rules.</span>
+              <span>🔹 Practical Section → apply grammar in controlled exercises.</span>
+              <span>🔹 SRO → continue learning independently.</span>
+              <span>🔹 Methodological Instructions → support the teacher.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- TOPIC 1 - THEORETICAL SECTION -->
+        <section id="theory" class="section" aria-labelledby="theory-title">
+          <div class="section-header">
+            <h2 class="section-title" id="theory-title">
+              <span class="icon">📚</span>
+              Topic 1 · Theoretical Section
+            </h2>
+            <span class="tag-topic">Verb "to be" · am / is / are</span>
+          </div>
+          <div class="section-body">
+            <p style="margin-bottom: 8px;">
+              <strong>Verb "to be": am / is / are · Personal Pronouns with "to be"</strong>
+            </p>
+            <p style="margin-bottom: 10px;">
+              The verb <strong>"to be"</strong> is one of the most important verbs in English. We use it to talk about
+              <em>identity, description, jobs, nationality, place and feelings</em>. In the present simple tense,
+              <strong>"to be"</strong> has three forms: <strong>am</strong>, <strong>is</strong> and <strong>are</strong>.
+            </p>
+
+            <div class="topic-layout">
+              <div>
+                <div class="theory-block" aria-label="Talking about identity">
+                  <div class="theory-subtitle">A. Talking about identity &amp; description</div>
+                  <h4>
+                    <span>👤</span>
+                    People, things, jobs and nationalities
+                  </h4>
+                  <p>
+                    We use the verb <strong>"to be"</strong> to say who or what someone or something is, and what they are
+                    like.
+                  </p>
+                  <ul class="example-list">
+                    <li><strong>I am a teacher.</strong> (job)</li>
+                    <li><strong>She is tall.</strong> (physical description)</li>
+                    <li><strong>They are students.</strong> (who they are)</li>
+                  </ul>
+                </div>
+
+                <div class="theory-block" aria-label="Talking about feelings">
+                  <div class="theory-subtitle">B. Talking about feelings or conditions</div>
+                  <h4>
+                    <span>😊</span>
+                    Emotions, states and temporary conditions
+                  </h4>
+                  <p>
+                    We also use <strong>"to be"</strong> to describe how someone feels or their current state.
+                  </p>
+                  <ul class="example-list">
+                    <li><strong>I am happy.</strong> (feeling)</li>
+                    <li><strong>He is tired.</strong> (condition)</li>
+                    <li><strong>We are ready.</strong> (state)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <div class="theory-block" aria-label="Personal pronouns table">
+                  <div class="theory-subtitle">Personal Pronouns with "to be"</div>
+                  <h4>
+                    <span>🧩</span>
+                    Pronoun + correct form of "to be"
+                  </h4>
+                  <p>
+                    Each personal pronoun has a specific form of the verb <strong>"to be"</strong> in the present simple.
+                  </p>
+
+                  <div class="pronoun-table-wrapper">
+                    <table class="pronoun-table">
+                      <thead>
+                        <tr>
+                          <th>Personal pronoun</th>
+                          <th>Form of "to be"</th>
+                          <th>Example</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>I</strong></td>
+                          <td><strong>am</strong></td>
+                          <td>I am happy.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>You</strong></td>
+                          <td><strong>are</strong></td>
+                          <td>You are my friend.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>He</strong></td>
+                          <td><strong>is</strong></td>
+                          <td>He is a doctor.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>She</strong></td>
+                          <td><strong>is</strong></td>
+                          <td>She is from Spain.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>It</strong></td>
+                          <td><strong>is</strong></td>
+                          <td>It is a nice day.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>We</strong></td>
+                          <td><strong>are</strong></td>
+                          <td>We are in the park.</td>
+                        </tr>
+                        <tr>
+                          <td><strong>They</strong></td>
+                          <td><strong>are</strong></td>
+                          <td>They are at home.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="pronoun-tagline">
+                    Remember:
+                    <strong>I → am</strong>,
+                    <strong>you / we / they → are</strong>,
+                    <strong>he / she / it → is</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRACTICAL SECTION -->
+        <section id="practice" class="section" aria-labelledby="practice-title">
+          <div class="section-header">
+            <h2 class="section-title" id="practice-title">
+              <span class="icon">✍️</span>
+              Topic 1 · Practical Section
+            </h2>
+            <span class="section-tag">Exercises</span>
+          </div>
+          <div class="section-body">
+            <p style="margin-bottom: 8px;">
+              Use the theory above to complete the following activities. Work individually first, then check in pairs or
+              with the teacher.
+            </p>
+
+            <div class="exercise-grid">
+              <!-- Exercise 1 -->
+              <article class="practice-block" aria-label="Exercise 1">
+                <h4>
+                  <span>📝</span>
+                  Exercise 1 — Fill in the blanks
+                </h4>
+                <p class="example-note">
+                  Complete the sentences with <strong>am</strong>, <strong>is</strong>, or <strong>are</strong>.
+                </p>
+                <ol class="exercise-list" type="1">
+                  <li><span class="num">1.</span> I ___ from Turkey.</li>
+                  <li><span class="num">2.</span> She ___ my sister.</li>
+                  <li><span class="num">3.</span> They ___ doctors.</li>
+                  <li><span class="num">4.</span> We ___ in the park.</li>
+                  <li><span class="num">5.</span> It ___ a nice day.</li>
+                  <li><span class="num">6.</span> You ___ very kind.</li>
+                  <li><span class="num">7.</span> He ___ not at home.</li>
+                  <li><span class="num">8.</span> I ___ not tired.</li>
+                </ol>
+              </article>
+
+              <!-- Exercise 2 -->
+              <article class="practice-block" aria-label="Exercise 2">
+                <h4>
+                  <span>🔄</span>
+                  Exercise 2 — Sentence Transformation
+                </h4>
+                <p class="example-note">
+                  Add the correct form of <strong>"to be"</strong>. Follow the example.
+                </p>
+                <p><strong>Example:</strong> She a teacher → <strong>She is a teacher.</strong></p>
+                <ol class="exercise-list" type="1" style="margin-top: 6px;">
+                  <li><span class="num">1.</span> I a student → _______________________________</li>
+                  <li><span class="num">2.</span> They in the library → _______________________________</li>
+                  <li><span class="num">3.</span> He from Italy → _______________________________</li>
+                  <li><span class="num">4.</span> We ready for the test → _______________________________</li>
+                  <li><span class="num">5.</span> It very cold today → _______________________________</li>
+                  <li><span class="num">6.</span> You my best friend → _______________________________</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- SRO SECTION -->
+        <section id="sro" class="section" aria-labelledby="sro-title">
+          <div class="section-header">
+            <h2 class="section-title" id="sro-title">
+              <span class="icon">🧠</span>
+              SRO · Self-study Tasks
+            </h2>
+            <span class="section-tag">Independent work</span>
+          </div>
+          <div class="section-body">
+            <p>
+              These tasks are designed for independent work. Students can complete them at home or in a self-access
+              learning session.
+            </p>
+
+            <ol class="sro-list">
+              <li>
+                <span class="sro-index">1</span>
+                <span>
+                  Write a short paragraph (5–7 sentences) about yourself using the verb <strong>"to be"</strong>. Include
+                  information about your name, age, nationality, job or studies, and where you are now.
+                </span>
+              </li>
+              <li>
+                <span class="sro-index">2</span>
+                <span>
+                  Create <strong>10 sentences</strong> using personal pronouns
+                  <em>(I, you, he, she, it, we, they)</em>. Use different pronouns and different forms of
+                  <strong>"to be"</strong>.
+                </span>
+              </li>
+              <li>
+                <span class="sro-index">3</span>
+                <span>
+                  Complete <strong>additional exercises online</strong> (teacher provides links or platform). Focus on
+                  choosing the correct form of <strong>am / is / are</strong>.
+                </span>
+              </li>
+              <li>
+                <span class="sro-index">4</span>
+                <span>
+                  Take a short <strong>self-assessment quiz</strong> about personal pronouns and the verb
+                  <strong>"to be"</strong>. Write down which questions were difficult and review the theory again.
+                </span>
+              </li>
+            </ol>
+
+            <p class="sro-note">
+              Tip for students: After finishing, read your sentences aloud to practice pronunciation and fluency.
+            </p>
+          </div>
+        </section>
+
+        <!-- TESTING SECTION -->
+        <section id="testing" class="section" aria-labelledby="testing-title">
+          <div class="section-header">
+            <h2 class="section-title" id="testing-title">
+              <span class="icon">📝</span>
+              Testing · Quick Quiz
+            </h2>
+            <span class="section-tag">Check your progress</span>
+          </div>
+          <div class="section-body">
+            <div class="testing-wrapper">
+              <p>
+                Choose the correct form of the verb <strong>"to be"</strong> (<strong>am</strong>, <strong>is</strong>,
+                <strong>are</strong>) for each sentence.
+              </p>
+
+              <div class="quiz-grid" aria-label="Multiple-choice quiz">
+                <!-- Q1 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>1.</span>
+                    She ___ a student.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q2 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>2.</span>
+                    They ___ happy.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q3 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>3.</span>
+                    I ___ from Brazil.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q4 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>4.</span>
+                    We ___ in the classroom.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q5 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>5.</span>
+                    It ___ very late.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q6 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>6.</span>
+                    You ___ my English teacher.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+
+                <!-- Q7 -->
+                <article class="quiz-item">
+                  <h4>
+                    <span>7.</span>
+                    He ___ not at work today.
+                  </h4>
+                  <ul class="quiz-options">
+                    <li>a) am</li>
+                    <li>b) is</li>
+                    <li>c) are</li>
+                  </ul>
+                </article>
+              </div>
+
+              <p class="quiz-hint">
+                After answering, check with the teacher or answer key. Try to explain why each answer is correct.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- METHODOLOGICAL INSTRUCTIONS -->
+        <section id="methodology" class="section" aria-labelledby="methodology-title">
+          <div class="section-header">
+            <h2 class="section-title" id="methodology-title">
+              <span class="icon">📑</span>
+              Methodological Instructions
+            </h2>
+            <span class="section-tag">For the teacher</span>
+          </div>
+          <div class="section-body">
+            <p style="margin-bottom: 8px;">
+              This section provides a step-by-step plan for teaching the lesson on the verb <strong>"to be"</strong> with
+              personal pronouns.
+            </p>
+
+            <div class="method-grid">
+              <div>
+                <ul class="method-list">
+                  <li>
+                    <span class="method-dot"></span>
+                    <span>
+                      <strong>1. Introduction of grammar rules.</strong>
+                      Start with simple examples on the board. Underline the pronouns and the verb
+                      <strong>"to be"</strong>. Elicit the forms <em>am, is, are</em> from students and create a summary
+                      table together.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="method-dot"></span>
+                    <span>
+                      <strong>2. Presentation of examples.</strong>
+                      Use sentences about real students (names, jobs, hobbies, nationality) to make the examples meaningful
+                      and personal. Read the sentences aloud and ask students to repeat.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="method-dot"></span>
+                    <span>
+                      <strong>3. Fill-in-the-blank exercises.</strong>
+                      Move to controlled practice (Exercise 1). First, complete one or two items together as a class, then
+                      let students work individually. Check answers in pairs and then as a whole group.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="method-dot"></span>
+                    <span>
+                      <strong>4. Matching and transformation activities.</strong>
+                      Use transformation tasks (Exercise 2) or matching (pronoun ↔ form of "to be") to deepen understanding.
+                      Encourage students to say the sentences aloud after they write them.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="method-dot"></span>
+                    <span>
+                      <strong>5. Short worksheet with mixed tasks.</strong>
+                      Combine different types of tasks (gap-fill, sentence ordering, correction of mistakes) in a short
+                      worksheet. Use it as a mini-test or as preparation for homework and SRO.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="worksheet-box" aria-label="Worksheet suggestions">
+                  <h4>Suggested mixed worksheet (example)</h4>
+                  <ul class="worksheet-list">
+                    <li>Part A: Fill in 6 sentences with <strong>am / is / are</strong>.</li>
+                    <li>Part B: Correct 4 incorrect sentences (e.g., <em>She are a doctor</em> → <em>She is a doctor</em>).</li>
+                    <li>Part C: Match 7 pronouns to the correct form of "to be".</li>
+                    <li>Part D: Write 5 new sentences about classmates using the correct forms.</li>
+                  </ul>
+                  <p style="margin-top: 5px;">
+                    Finish the lesson with a short reflection: ask students which forms are easy or difficult and which
+                    situations they can now talk about using the verb <strong>"to be"</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ASIDE: PROGRESS & QUICK LINKS -->
+      <aside aria-label="Course sidebar">
+        <div class="side-card">
+          <h3>
+            <span>📊</span>
+            Lesson overview
+          </h3>
+          <p>
+            Follow the sequence:
+            <strong>Home → Theory → Practice → SRO → Testing</strong>.
+          </p>
+          <div class="pill-row">
+            <span>Verb "to be"</span>
+            <span>Personal pronouns</span>
+            <span>Present Simple</span>
+          </div>
+          <button class="btn-small" onclick="window.location.hash='#theory'">
+            Jump to theory
+          </button>
+        </div>
+
+        <div class="side-card">
+          <h3>
+            <span>✅</span>
+            Ready checklist
+          </h3>
+          <ul style="list-style:none; margin-top:4px; font-size:0.85rem;">
+            <li>☐ I can choose <strong>am / is / are</strong>.</li>
+            <li>☐ I know pronouns and forms.</li>
+            <li>☐ I can write 5–10 sentences.</li>
+            <li>☐ I have completed the quiz.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="footer-main">
+        <span>
+          <strong>Course:</strong>
+          Effective English Grammar
+        </span>
+        <span>
+          <strong>Type:</strong>
+          Educational grammar course
+        </span>
+        <span>
+          <strong>Purpose:</strong>
+          Help students master basic English grammar.
+        </span>
+      </div>
+      <div class="footer-link">
+        <a href="#home" class="back-to-top">Back to top ↑</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
